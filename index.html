@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>تدريب رياضيات ثامن – الوحدة الأولى</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap">
+<style>
+:root{--bg:#eef3f7;--grid:#d6e2ec;--ink:#1c2a4a;--mut:#5b6b86;--card:#fff;--line:#c9d6e3;--acc:#2456c9;--onacc:#fff;--ok:#16794f;--okbg:#e0f4ea;--no:#b8322a;--nobg:#fbe5e2;--pen:#f4c430;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111a26;--grid:#1b2a3c;--ink:#e8eef8;--mut:#9fb0c8;--card:#192536;--line:#2e415a;--acc:#6e9bff;--onacc:#0b1220;--ok:#5fd6a0;--okbg:#14382b;--no:#ff8f86;--nobg:#42201d}}
+:root[data-theme="dark"]{--bg:#111a26;--grid:#1b2a3c;--ink:#e8eef8;--mut:#9fb0c8;--card:#192536;--line:#2e415a;--acc:#6e9bff;--onacc:#0b1220;--ok:#5fd6a0;--okbg:#14382b;--no:#ff8f86;--nobg:#42201d}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Cairo',Tahoma,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;
+background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;min-height:100vh}
+main{max-width:520px;margin:0 auto;padding:16px 14px 40px}
+h1{font-size:24px;font-weight:800;margin:6px 0 0}
+.sub{color:var(--mut);margin:0 0 16px;font-size:15px}
+button{font:inherit;color:inherit;cursor:pointer}
+.topic{display:flex;align-items:center;gap:12px;width:100%;text-align:right;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;min-height:60px}
+.topic b{display:block;font-weight:700;font-size:17px;line-height:1.3}
+.topic small{color:var(--mut)}
+.num{flex:none;min-width:44px;height:44px;border-radius:8px;background:var(--pen);color:#241c00;font-weight:800;display:grid;place-items:center;font-size:15px}
+.best{margin-inline-start:auto;font-size:13px;color:var(--ok);font-weight:700;white-space:nowrap}
+.exam{border-color:var(--acc);border-width:2px}
+.bar{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.back{background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:6px 12px;min-height:40px}
+.prog{flex:1;height:8px;background:var(--line);border-radius:6px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--acc);transition:width .3s}
+.cnt{font-size:14px;color:var(--mut);white-space:nowrap}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:16px}
+.q{font-size:20px;font-weight:700;line-height:2;margin:0 0 10px}
+.paper{background:#fff6cc;color:#4a3b00;border-radius:8px;padding:7px 11px;font-size:14px;margin-bottom:12px}
+.m{direction:ltr;unicode-bidi:isolate;display:inline-block;font-weight:800;font-size:1.1em;padding:0 3px}
+.fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1.2;margin:0 2px}
+.fr i{font-style:normal;padding:0 4px}.fr i:first-child{border-bottom:2px solid currentColor}
+.rt b{font-weight:inherit;border-top:2px solid currentColor;padding:0 2px;margin-left:1px}
+input[type=text]{width:100%;font:inherit;font-size:22px;font-weight:700;direction:ltr;text-align:center;padding:10px;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+input:focus,button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.keys{display:flex;gap:8px;margin:8px 0}
+.keys button{flex:1;min-height:44px;font-size:20px;font-weight:700;background:var(--bg);border:1.5px solid var(--line);border-radius:10px}
+.opt{display:block;width:100%;text-align:center;background:var(--bg);border:2px solid var(--line);border-radius:10px;padding:10px;margin-bottom:8px;font-size:19px;font-weight:700;min-height:52px}
+.opt.sel{border-color:var(--acc);background:var(--card);box-shadow:inset 0 0 0 1px var(--acc)}
+.opt.right{border-color:var(--ok);background:var(--okbg)}.opt.wrong{border-color:var(--no);background:var(--nobg)}
+.go{display:block;width:100%;background:var(--acc);color:var(--onacc);border:0;border-radius:12px;padding:12px;font-size:18px;font-weight:800;margin-top:10px;min-height:50px}
+.go.alt{background:transparent;color:var(--acc);border:2px solid var(--acc)}
+.link{background:none;border:0;color:var(--acc);font-weight:700;padding:6px 0;text-decoration:underline}
+.hint{background:var(--bg);border-inline-start:4px solid var(--pen);padding:8px 12px;margin:8px 0;border-radius:6px}
+.fb{margin-top:12px;border-radius:10px;padding:10px 14px}
+.fb.ok{background:var(--okbg);color:var(--ok)}.fb.no{background:var(--nobg);color:var(--no)}
+.fb.mid{background:var(--bg);color:var(--ink);border:1.5px solid var(--pen)}
+.fb .ex{color:var(--ink);margin-top:4px}
+.big{font-size:56px;font-weight:800;text-align:center;margin:8px 0}
+.hide{display:none}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+const R=(a,b)=>a+Math.floor(Math.random()*(b-a+1)),pick=a=>a[R(0,a.length-1)];
+const sh=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(p=>p[1]);
+const g=(a,b)=>b?g(b,a%b):Math.abs(a);
+const S=(n,d=1)=>{if(d<0){n=-n;d=-d}const k=g(n,d)||1;return{n:n/k,d:d/k}};
+const add=(a,b)=>S(a.n*b.d+b.n*a.d,a.d*b.d),sub=(a,b)=>add(a,{n:-b.n,d:b.d}),mul=(a,b)=>S(a.n*b.n,a.d*b.d),div=(a,b)=>S(a.n*b.d,a.d*b.n);
+const eq=(a,b)=>a.n*b.d===b.n*a.d,lt=(a,b)=>a.n*b.d<b.n*a.d;
+const fr=(n,d=1)=>{const neg=(n<0)!==(d<0);n=Math.abs(n);d=Math.abs(d);return(neg?'−':'')+(d===1?n:`<span class="fr"><i>${n}</i><i>${d}</i></span>`)};
+const FR=o=>fr(o.n,o.d),M=h=>`<span class="m">${h}</span>`,fm=(n,d)=>M(fr(n,d));
+const sq=x=>`<span class="rt">√<b>${x}</b></span>`,cb=x=>`<span class="rt">∛<b>${x}</b></span>`;
+const dec=x=>{const[i,f='']=String(x).split('.');return S(+(i+f),Math.pow(10,f.length))};
+const num=x=>+x.toFixed(4);
+function parse(s){s=s.trim().replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[−–—]/g,'-').replace(/[،٫,]/g,'.').replace(/\s+/g,'');
+ let m=s.match(/^(-?)(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/);
+ if(m){const a=dec(m[2]),b=dec(m[3]);if(!b.n)return null;const r=div(a,b);return m[1]?S(-r.n,r.d):r}
+ m=s.match(/^(-?)(\d+(?:\.\d+)?)$/);if(m){const r=dec(m[2]);return m[1]?S(-r.n,r.d):r}return null}
+const N=(t,a,h,e,x={})=>({t,a,h,e,...x});
+const MC=(t,opts,c,h,e)=>({t,mc:1,opts,c,h,e});
+const YN=(t,yes,e,h)=>MC(t,['نعم','لا'],yes?0:1,h||'فكّر: هل بقدر أكتبه على صورة كسر أ/ب؟',e);
+
+const TOPICS=[
+{n:'العدد النسبي',s:'١-١',g:[
+ ()=>{const d=pick([2,4,5,8,20,25]),n=pick([1,3,7,9,11,13]);return N(`اكتب ${fm(n,d)} على صورة عدد عشري.`,S(n,d),'اقسم البسط على المقام.',`${fm(n,d)} = ${n} ÷ ${d} = ${num(n/d)}`,{ah:String(num(n/d))})},
+ ()=>{const x=pick([0.35,0.6,0.15,0.8,0.45,0.04,0.75,0.125]),a=dec(x);return N(`اكتب ${M(x)} على صورة كسر بأبسط صورة (مثل 3/4).`,a,'اكتبه كسر مقامه 10 أو 100 أو 1000 وبعدين بسّط.',`${M(x)} = ${FR(a)}`,{frac:1})},
+ ()=>{const X=pick([100,50,200,60]),Y=pick([10,20,25,15]),a=S(Y,X-Y);return N(`مع خليل ${X} دينارًا، تصدّق بـ ${Y} دينارًا. اكتب العدد النسبي الدالّ على ما تصدّق به إلى ما بقي معه، بأبسط صورة.`,a,`ما بقي معه = ${X} − ${Y}.`,`الباقي = ${X-Y}، فالنسبة ${fm(Y,X-Y)} = ${M(FR(a))}`,{frac:1})},
+ ()=>{const it=pick([[M('0.6'),1,'0.6 = 6/10'],[fm(3,7),1,'كسر بسطه ومقامه صحيحان'],[sq(2),0,'√2 عدد عشري غير منتهٍ وغير دوري'],[sq(9),1,'√9 = 3 = 3/1'],[M('0.333…'),1,'العشري الدوري عدد نسبي'],[cb(8),1,'∛8 = 2'],[sq(5),0,'√5 غير نسبي لأن 5 ليس مربعًا كاملًا'],[M('−5'),1,'−5 = −5/1']]);return YN(`هل العدد ${it[0]} نسبي؟`,it[1],it[2])},
+ ()=>{const p=pick([[0.14,0.15],[0.2,0.3],[1.1,1.2],[0.6,0.7]]),lo=dec(p[0]),hi=dec(p[1]);return{t:`اكتب عددًا نسبيًا يقع بين ${M(p[0])} و ${M(p[1])}.`,chk:v=>lt(lo,v)&&lt(v,hi),h:'أضف منزلة عشرية: مثلًا بين 0.2 و 0.3 يقع 0.25.',e:'أي عدد بين الحدّين صحيح، مثلًا '+M(num((p[0]+p[1])/2)),ah:'مثلًا '+M(num((p[0]+p[1])/2))}}
+]},
+{n:'الجذر التربيعي والتكعيبي',s:'٢-١',g:[
+ ()=>{const a=pick([1,2,3,4,5,6,7,8,9]),b=pick([2,3,4,5,6,7,8,10]);if(a>=b||g(a,b)>1)return TOPICS[1].g[0]();return N(`جد قيمة ${M(sq(fr(a*a,b*b)))}`,S(a,b),'الجذر للبسط والمقام كلٌّ على حدة.',`${M(sq(a*a))} = ${a} ، ${M(sq(b*b))} = ${b} ← ${fm(a,b)}`,{frac:1})},
+ ()=>{const x=R(-5,6);return N(`جد قيمة ${M(cb(x**3))}`,S(x),'ابحث عن عدد إذا ضربته بنفسه ثلاث مرات يعطيك العدد.',`${x}×${x}×${x} = ${x**3}`)},
+ ()=>{const k=R(2,15);const v=num(k*k/100);return N(`جد قيمة ${M(sq(v))}`,S(k,10),'0.64 = 64/100 ثم خذ الجذر.',`${M(sq(v))} = ${num(k/10)}`,{ah:String(num(k/10))})},
+ ()=>{const s=pick([6,7,8,9,12,15]);return N(`مربّع مساحته ${s*s} م². كم طول ضلعه بالمتر؟`,S(s),'طول الضلع = جذر المساحة.',`${M(sq(s*s))} = ${s}`)},
+ ()=>{const s=pick([3,4,5,6,9]);return N(`خزّان مكعّب الشكل حجمه ${s**3} م³. كم طول حرفه بالمتر؟`,S(s),'الحجم = الحرف × الحرف × الحرف.',`${M(cb(s**3))} = ${s}`)},
+ ()=>{const a=pick([4,9,16,25,36,49]),b=pick([8,27,64]);return N(`جد قيمة ${M(sq(a)+' + '+cb(b))}`,S(Math.sqrt(a)+Math.round(Math.cbrt(b))),'احسب كل جذر لوحده ثم اجمع.',`${Math.sqrt(a)} + ${Math.round(Math.cbrt(b))} = ${Math.sqrt(a)+Math.round(Math.cbrt(b))}`)}
+]},
+{n:'مقارنة الأعداد النسبية',s:'٣-١',g:[
+ ()=>{let a=S(R(1,8),R(2,9)),b=S(R(1,8),R(2,9));if(Math.random()<.2)b=S(a.n*2,a.d*2);const c=eq(a,b)?2:lt(a,b)?1:0;return MC(`قارن: ${M(FR(a)+' &nbsp;○&nbsp; '+FR(b))}`,['أكبر من >','أصغر من <','يساوي ='],c,'وحّد المقامين (أو اضرب بالتبادل).',`${M(FR(a))} = ${num(a.n/a.d)}، ${M(FR(b))} = ${num(b.n/b.d)}`)},
+ ()=>{const x=R(2,9)/10;const f=S(R(1,7),R(3,9));const c=eq(dec(x),f)?2:lt(dec(x),f)?1:0;return MC(`قارن: ${M(x+' &nbsp;○&nbsp; '+FR(f))}`,['أكبر من >','أصغر من <','يساوي ='],c,'حوّل الكسر إلى عدد عشري.',`${M(FR(f))} ≈ ${num(f.n/f.d)}`)},
+ ()=>{const a=S(-R(1,4),R(2,5)),b=S(-R(1,4),R(2,5));if(eq(a,b))return TOPICS[2].g[2]();const c=lt(a,b)?1:0;return MC(`قارن: ${M(FR(a)+' &nbsp;○&nbsp; '+FR(b))}`,['أكبر من >','أصغر من <'],c,'في السالبة: الأقرب للصفر هو الأكبر.',`${M(FR(a))} = ${num(a.n/a.d)}، ${M(FR(b))} = ${num(b.n/b.d)}`)},
+ ()=>{const v=sh([S(R(1,3),4),S(R(1,5),6),dec(pick([0.4,0.55,0.7,0.8])),S(R(1,5),5)]);const mx=v.reduce((p,c)=>lt(p,c)?c:p);return MC('أيّ هذه الأعداد هو الأكبر؟',v.map(x=>M(FR(x))),v.indexOf(mx),'حوّلها كلها إلى أعداد عشرية.',v.map(x=>M(FR(x))+' ≈ '+num(x.n/x.d)).join(' ، '))},
+ ()=>{const lo=S(R(1,2),3),hi=S(R(3,4),5);return{t:`اكتب عددًا نسبيًا بين ${fm(lo.n,lo.d)} و ${fm(hi.n,hi.d)}.`,chk:v=>lt(lo,v)&&lt(v,hi),h:`الأول ≈ ${num(lo.n/lo.d)} والثاني ≈ ${num(hi.n/hi.d)}.`,e:'أي عدد بين القيمتين العشريتين صحيح.',ah:'مثلًا '+M(num((lo.n/lo.d+hi.n/hi.d)/2))}}
+]},
+{n:'جمع الأعداد النسبية وطرحها',s:'٤-١',g:[
+ ()=>{const a=S(R(1,5),R(2,6)),b=S(R(1,5),R(2,6)),p=Math.random()<.5;return N(`جد الناتج: ${M(FR(a)+(p?' + ':' − ')+FR(b))}`,p?add(a,b):sub(a,b),'وحّد المقامات أولًا.',`الناتج = ${M(FR(p?add(a,b):sub(a,b)))}`)},
+ ()=>{const x=R(1,9)/10,f=S(R(1,4),10);return N(`جد الناتج: ${M(x+' + '+FR(f))}`,add(dec(x),f),'حوّل العشري إلى كسر أو الكسر إلى عشري.',`الناتج = ${M(FR(add(dec(x),f)))}`)},
+ ()=>{const a=S(-R(1,3),R(2,4)),b=S(R(1,3),R(2,5));return N(`جد الناتج: ${M(FR(a)+' − '+FR(b))}`,sub(a,b),'طرح عدد = جمع نظيره الجمعي.',`الناتج = ${M(FR(sub(a,b)))}`)},
+ ()=>{const w1=R(10,15),w2=R(10,15);const a=add(S(w1),S(1,pick([2,4]))),b=add(S(w2),S(1,pick([2,4])));return N(`تبرّع طلبة الصف الأول بـ ${M(w1+fr(a.n-w1*a.d,a.d))} دينارًا وطلبة الصف الثاني بـ ${M(w2+fr(b.n-w2*b.d,b.d))} دينارًا. ما مجموع ما تبرّعوا به؟`,add(a,b),'حوّل العدد الكسري إلى كسر غير فعلي أو اجمع الصحيح وحده.',`المجموع = ${M(FR(add(a,b)))} = ${num(add(a,b).n/add(a,b).d)} دينارًا`)},
+ ()=>{const a=S(R(-6,6)||3,R(2,7));return N(`جد النظير الجمعي للعدد ${M(FR(a))}`,S(-a.n,a.d),'النظير الجمعي: العدد الذي مجموعه مع العدد الأصلي صفر.',`${M(FR(a))} + ${M(FR(S(-a.n,a.d)))} = 0`)}
+]},
+{n:'ضرب الأعداد النسبية وقسمتها',s:'٥-١',g:[
+ ()=>{const a=S(R(-5,5)||2,R(2,7)),b=S(R(1,6),R(2,7));return N(`جد الناتج: ${M(FR(a)+' × '+FR(b))}`,mul(a,b),'اضرب البسط بالبسط والمقام بالمقام ثم بسّط.',`الناتج = ${M(FR(mul(a,b)))}`)},
+ ()=>{const a=S(R(1,6),R(2,7)),b=S(R(1,6),R(2,7));return N(`جد الناتج: ${M(FR(a)+' ÷ '+FR(b))}`,div(a,b),'القسمة = الضرب بمقلوب القاسم.',`${M(FR(a))} × ${M(FR(S(b.d,b.n)))} = ${M(FR(div(a,b)))}`)},
+ ()=>{const a=S(R(2,9)*pick([1,-1]),R(2,9));return N(`جد النظير الضربي للعدد ${M(FR(a))}`,S(a.d,a.n),'النظير الضربي: العدد الذي حاصل ضربه مع العدد الأصلي = 1.',`${M(FR(a))} × ${M(FR(S(a.d,a.n)))} = 1`)},
+ ()=>{const n=R(3,8),h=pick([2.5,2.8,3.2]);return N(`عمارة ارتفاعها ${M(num(h*n))} م، وارتفاع كل طابق ${M(h)} م. كم عدد طوابقها؟`,S(n),'اقسم الارتفاع الكلي على ارتفاع الطابق.',`${num(h*n)} ÷ ${h} = ${n}`)},
+ ()=>{const p=pick([1.25,1.5,2.5,0.75]),L=pick([4,8,10,12]);return N(`ثمن لتر زيت الزيتون ${M(p)} دينارًا. كم ثمن تنكة سعتها ${L} لترًا؟`,dec(num(p*L)),'الثمن = ثمن اللتر × عدد اللترات.',`${p} × ${L} = ${num(p*L)}`,{ah:String(num(p*L))})}
+]},
+{n:'العدد غير النسبي',s:'٦-١',g:[
+ ()=>{const irr=pick([sq(2),sq(3),sq(5),sq(7),sq(10),cb(2),cb(5),cb(9)]),pool=sh([sq(pick([4,9,16,25])),fm(R(1,5),R(6,9)),M(pick(['0.25','0.8','1.5'])),cb(pick([8,27,64]))]).slice(0,3);const o=sh([irr,...pool]);return MC('أيّ الأعداد التالية عدد غير نسبي؟',o,o.indexOf(irr),'غير النسبي: جذر عدد ليس مربعًا (أو مكعبًا) كاملًا.',`${irr} جذر لعدد ليس مربعًا ولا مكعبًا كاملًا، فهو غير نسبي.`)},
+ ()=>{const k=R(3,9),n=R(k*k+1,(k+1)*(k+1)-1);return N(`العدد ${M(sq(n))} يقع بين عددين صحيحين متتاليين. ما العدد الأصغر منهما؟`,S(k),`ابحث عن مربّعين كاملين يقع بينهما ${n}.`,`${k*k} < ${n} < ${(k+1)**2} ← ${k} < ${M(sq(n))} < ${k+1}`)},
+ ()=>{const n=pick([2,3,5,6,7,10,11,13,17,20]);const v=Math.sqrt(n);return{t:`اكتب قيمة تقريبية للعدد ${M(sq(n))} لأقرب جزء من عشرة.`,chk:x=>Math.abs(x.n/x.d-v)<=.06,h:'جرّب أعدادًا عشرية: 1.4 × 1.4 = ؟',e:`${M(sq(n))} ≈ ${v.toFixed(1)}`,ah:v.toFixed(1)}},
+ ()=>{const k=R(2,5),m=pick([2,3,5,6,7]),c=`${k}${sq(m)}`;const o=sh([c,`${m}${sq(k)}`,`${k*k}${sq(m)}`,`${k+m}`]);return MC(`اكتب ${M(sq(k*k*m))} بأبسط صورة`,o.map(M),o.indexOf(c),`حلّل ${k*k*m} إلى ${k*k} × ${m}.`,`${M(sq(k*k*m))} = ${M(sq(k*k)+'×'+sq(m))} = ${M(c)}`)},
+ ()=>{const k=pick([2,3,4]);return MC(`مكعّب حجمه ${k**3+pick([1,2,3])} سم³. هل طول حرفه عدد نسبي؟`,['نعم','لا'],1,'هل الحجم مكعب كامل؟','الحجم ليس مكعبًا كاملًا، فجذره التكعيبي غير نسبي.')}
+]},
+{n:'العمليات على الأعداد غير النسبية',s:'٧-١',g:[
+ ()=>{const a=R(2,7),b=R(1,6),m=pick([2,3,5,7]),p=Math.random()<.6;return N(`أكمل: ${M(a+sq(m)+(p?' + ':' − ')+b+sq(m)+' = ؟'+sq(m))}`,S(p?a+b:a-b),'اجمع (أو اطرح) المعاملات والجذر نفسه.',`${a} ${p?'+':'−'} ${b} = ${p?a+b:a-b}`)},
+ ()=>{const m=pick([2,3,5,6]),k=R(2,4);return N(`جد ناتج ${M(sq(m)+' × '+sq(m*k*k))}`,S(m*k),'√أ × √ب = √(أ×ب) ثم بسّط.',`${M(sq(m*m*k*k))} = ${m*k}`)},
+ ()=>{const n=pick([2,3,5,7]),k=pick([1,2,3]);return N(`جد ناتج ${M('('+sq(n)+' + '+k+')('+sq(n)+' − '+k+')')}`,S(n-k*k),'(أ+ب)(أ−ب) = أ² − ب².',`${n} − ${k*k} = ${n-k*k}`)},
+ ()=>{const m=pick([2,3,5]),a=R(1,3),b=R(1,3);return N(`أكمل: ${M(sq(4*a*a*m)+' + '+sq(b*b*m)+' = ؟'+sq(m))}`,S(2*a+b),'بسّط كل جذر أولًا.',`${2*a}${sq(m)} + ${b}${sq(m)} = ${2*a+b}${sq(m)}`)},
+ ()=>{const it=pick([['مجموع عددين غير نسبيين هو دائمًا عدد غير نسبي.',0,'مثال: √2 + (−√2) = 0 وهو عدد نسبي.'],['ناتج طرح عددين غير نسبيين قد يكون نسبيًا.',1,'مثال: √3 − √3 = 0.'],['√2 × √2 عدد نسبي.',1,'√2 × √2 = 2.']]);return MC(it[0],['صح','خطأ'],it[1]?0:1,'جرّب مثالًا بسيطًا.',it[2])}
+]}
+];
+const EXAM={n:'اختبار شامل (12 سؤال)',s:'★',all:1};
+const app=document.getElementById('app');
+let st;
+const load=()=>{try{return JSON.parse(localStorage.getItem('m8u1')||'{}')}catch(e){return{}}};
+const save=(k,v)=>{try{const o=load();o[k]=Math.max(o[k]||0,v);localStorage.setItem('m8u1',JSON.stringify(o))}catch(e){}};
+
+function home(){const b=load();
+ app.innerHTML=`<h1>تدريب الرياضيات – ثامن</h1><p class="sub">الوحدة الأولى: الأعداد النسبية وغير النسبية<br>حلّ كل سؤال على ورقة، وبعدين اكتب النتيجة هون.</p>`+
+ [...TOPICS,EXAM].map((t,i)=>`<button class="topic ${t.all?'exam':''}" data-i="${i}"><span class="num">${t.s}</span><span><b>${t.n}</b><small>${t.all?'أسئلة من كل الدروس':'8 أسئلة جديدة كل مرة'}</small></span>${b[i]!=null?`<span class="best">أفضل: ${b[i]}</span>`:''}</button>`).join('');
+ app.querySelectorAll('.topic').forEach(el=>el.onclick=()=>start(+el.dataset.i))}
+
+function mk(i){if(i===TOPICS.length){const f=pick(TOPICS.flatMap(t=>t.g));return f()}return pick(TOPICS[i].g)()}
+function start(i){const n=i===TOPICS.length?12:8;st={i,n,k:0,score:0,qs:[]};
+ for(let j=0;j<n;j++){let q,c=0;do{q=i===TOPICS.length?pick(TOPICS[j%TOPICS.length].g)():pick(TOPICS[i].g)();c++}while(c<4&&st.qs.some(x=>x.t===q.t));st.qs.push(q)}
+ show()}
+
+function show(){const q=st.qs[st.k];q.done=0;q.sel=null;
+ app.innerHTML=`<div class="bar"><button class="back" id="bk">رجوع</button><div class="prog"><i style="width:${st.k/st.n*100}%"></i></div><span class="cnt">${st.k+1} / ${st.n}</span></div>
+ <div class="card"><div class="paper">✏️ حلّها على الورقة أولًا، وبعدين اكتب النتيجة.</div><p class="q">${q.t}</p>
+ ${q.mc?q.opts.map((o,j)=>`<button class="opt" data-j="${j}">${o}</button>`).join(''):`<input type="text" id="in" inputmode="text" autocomplete="off" placeholder="اكتب الجواب" aria-label="الجواب"><div class="keys"><button data-k="/">/</button><button data-k="-">−</button><button data-k=".">.</button><button data-k="" id="del">⌫</button></div><small style="color:var(--mut)">الكسر اكتبه هيك 3/4 ، والعشري 0.75</small>`}
+ <div><button class="link" id="hb">أحتاج تلميح</button></div><div class="hint hide" id="hn">${q.h}</div>
+ <div id="fb"></div><button class="go" id="ok">تحقق من الجواب</button></div>`;
+ document.getElementById('bk').onclick=home;
+ document.getElementById('hb').onclick=()=>document.getElementById('hn').classList.remove('hide');
+ const ok=document.getElementById('ok');ok.onclick=()=>check(q);
+ if(q.mc)app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(q.done)return;q.sel=+b.dataset.j;app.querySelectorAll('.opt').forEach(x=>x.classList.toggle('sel',x===b))});
+ else{const inp=document.getElementById('in');app.querySelectorAll('.keys button').forEach(b=>b.onclick=()=>{if(q.done)return;if(b.id==='del')inp.value=inp.value.slice(0,-1);else inp.value+=b.dataset.k;inp.focus()});inp.onkeydown=e=>{if(e.key==='Enter')ok.click()}}}
+
+function check(q){const fb=document.getElementById('fb'),btn=document.getElementById('ok');
+ if(q.done){next();return}
+ let res;
+ if(q.mc){if(q.sel==null){fb.innerHTML='<div class="fb mid">اختر جوابًا أولًا.</div>';return}res=q.sel===q.c?'ok':'no'}
+ else{const raw=document.getElementById('in').value,v=parse(raw);if(!v){fb.innerHTML='<div class="fb mid">اكتب رقمًا أو كسرًا، مثل 3/4 أو 0.5 أو -2.</div>';return}
+  if(q.chk)res=q.chk(v)?'ok':'no';
+  else if(!eq(v,q.a))res='no';
+  else{const m=raw.replace(/\s/g,'').match(/^-?(\d+)\/(\d+)$/);res=(q.frac&&!(v.d===1&&!m||m&&g(+m[1],+m[2])===1))?'simp':'ok'}}
+ if(res==='simp'){fb.innerHTML='<div class="fb mid">قيمتها صحيحة، بس السؤال بدّه كسر بأبسط صورة. بسّطه واكتبه مثل 3/4.</div>';return}
+ q.done=1;if(res==='ok')st.score++;
+ const ans=q.mc?q.opts[q.c]:(q.ah||M(FR(q.a)));
+ if(q.mc)app.querySelectorAll('.opt').forEach((b,j)=>{b.classList.toggle('right',j===q.c);b.classList.toggle('wrong',j===q.sel&&j!==q.c)});
+ fb.innerHTML=res==='ok'?`<div class="fb ok"><b>صح، شاطر!</b><div class="ex">${q.e}</div></div>`:`<div class="fb no"><b>مش صحيح. الجواب: ${ans}</b><div class="ex">${q.e}</div></div>`;
+ btn.textContent=st.k+1<st.n?'السؤال التالي':'شوف النتيجة';btn.classList.add('alt');btn.focus()}
+
+function next(){st.k++;if(st.k<st.n)show();else done()}
+function done(){save(st.i,st.score);const p=st.score/st.n;
+ app.innerHTML=`<div class="card"><p class="sub" style="text-align:center">النتيجة</p><div class="big">${st.score} / ${st.n}</div><p style="text-align:center;font-size:18px;font-weight:700">${p>=.85?'ممتاز! جاهز للامتحان.':p>=.6?'كويس، كرّر مرة كمان وبتصير ممتاز.':'ولا يهمك، راجع الدرس وجرّب أسئلة جديدة.'}</p>
+ <button class="go" id="again">أسئلة جديدة بنفس الدرس</button><button class="go alt" id="hm">القائمة الرئيسية</button></div>`;
+ document.getElementById('again').onclick=()=>start(st.i);document.getElementById('hm').onclick=home}
+home();
+</script>
+</body>
+</html>
